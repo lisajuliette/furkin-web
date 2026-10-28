@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Waitlist form states</title>
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}
+</style>
+
+<div class="ws" data-theme="light" data-profile="glacier" style="">
+<div class="ws-wrap" style="padding: 56px 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 56px; max-width: none">
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Default</p><form class="ws-form" action="/api/waitlist" method="post"><div class="ws-form__row"><label class="ws-honey">Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label><label for="s1" class="ws-honey">Email</label><input class="ws-input" id="s1" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email"><button class="fk-btn fk-btn--primary" type="submit">Get early access</button></div><span class="ws-hint">We'll email you once when Furkin launches. No spam, unsubscribe any time.</span></form></div>
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Typing (focus ring)</p><form class="ws-form" action="/api/waitlist" method="post"><div class="ws-form__row"><label class="ws-honey">Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label><label for="s2" class="ws-honey">Email</label><input class="ws-input is-focus" id="s2" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email" value="lisa@exam"><button class="fk-btn fk-btn--primary" type="submit">Get early access</button></div><span class="ws-hint">We'll email you once when Furkin launches. No spam, unsubscribe any time.</span></form></div>
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Invalid email</p><form class="ws-form" action="/api/waitlist" method="post"><div class="ws-form__row"><label class="ws-honey">Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label><label for="s3" class="ws-honey">Email</label><input class="ws-input is-error" id="s3" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email" value="lisa@example"><button class="fk-btn fk-btn--primary" type="submit">Get early access</button></div><span class="ws-hint ws-hint--error" role="alert"><svg class="fk-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.2a2 2 0 0 1 3.4 0l7.5 13a2 2 0 0 1-1.7 3H4.5a2 2 0 0 1-1.7-3z"/><path d="M12 9.5v4"/><path d="M12 17h.01"/></svg>That email looks incomplete. Check the part after the @.</span></form></div>
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Sending</p><form class="ws-form" action="/api/waitlist" method="post"><div class="ws-form__row"><label class="ws-honey">Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label><label for="s4" class="ws-honey">Email</label><input class="ws-input" id="s4" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email" value="lisa@example.com"><button class="fk-btn fk-btn--primary" type="submit" aria-busy="true" aria-label="Sending"><span class="fk-dots"><i></i><i></i><i></i></span></button></div><span class="ws-hint">We'll email you once when Furkin launches. No spam, unsubscribe any time.</span></form></div>
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Sent: same message whether or not the email was already on the list</p><div class="ws-sent" role="status"><span class="ws-sticker__ic" style="background: var(--on-fill); color: var(--done); border-color: var(--on-fill)"><svg class="fk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="ws-stack"><span class="ws-sent__t">Check your inbox</span><span class="ws-sent__s">We sent a link to lisa@example.com. Tap it to confirm your spot.</span></span></div></div>
+<div class="ws-statecol"><p class="ws-label" style="color: var(--muted)">Rate limited (5 per hour per IP)</p><div class="ws-sent" style="background: var(--surface); color: var(--ink)" role="alert"><span class="ws-sticker__ic"><svg class="fk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span class="ws-stack"><span class="ws-sent__t">Too many tries</span><span class="ws-sent__s" style="color: var(--muted)">Please wait a few minutes and try again.</span></span></div></div>
+</div>
+</div>
+
+</body>
+</html>

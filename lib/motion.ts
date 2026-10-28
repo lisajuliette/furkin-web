@@ -1,0 +1,4 @@
+// Hides nothing until this runs. Reduced motion skips the class, so the page stays still.
+// A scroll listener, not IntersectionObserver: the entrance check has to run on the
+// same scroll path as the sticky header, including browsers where the observer never fires.
+export const sectionMotionScript = `(function(){try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){return;}document.documentElement.classList.add('js-motion');var nodes=document.querySelectorAll('.ws-rise');var reveal=function(){var limit=window.innerHeight*0.92;nodes.forEach(function(node){if(node.classList.contains('is-in'))return;var box=node.getBoundingClientRect();if(box.top<limit&&box.bottom>0)node.classList.add('is-in');});};reveal();document.addEventListener('scroll',reveal,{passive:true,capture:true});window.addEventListener('resize',reveal);})();`;

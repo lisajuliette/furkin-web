@@ -1,0 +1,32 @@
+---
+description: Furkin website rules. Apply to every change in this repository.
+globs: app/**, components/**, styles/**, content/**
+alwaysApply: true
+---
+
+# Furkin website rules
+
+Sources: docs/README.md, docs/WEBSITE.md (behaviour), docs/design/ (visuals). Designs win on visuals; WEBSITE.md wins on behaviour and data.
+
+## Build
+- For every page, find its row in docs/design/SCREENS.md, match the PNG and open the HTML for exact spacing. Check 1440 and 390 wide, light and dark.
+- Styling comes from styles/tokens.css, styles/components.css and styles/site.css (copied from docs/design/styles). Use their classes; add new rules to site.css in the same style. No Tailwind, no CSS-in-JS, no new colour values.
+- Colours: role tokens only (background, surface, ink, muted, primary, done, accent, action, on-action, on-fill, danger, shadow). Never a hex in a component.
+- Only the colour profiles toy changes data-profile, and only on its own container.
+- Server components by default. The toy, the theme toggle and the waitlist form are the only client components.
+- Icons from components/Icon.tsx (docs/design/icons). No emoji anywhere.
+
+## Data and security
+- Supabase is shared with the app. Never create migrations or run SQL against it from here; the schema lives in the app repository (docs/db/website.sql is the hand-over).
+- The service role key is server-only. Waitlist responses never reveal whether an email already exists. Invite pages show names only for valid invites.
+
+## Copy
+- All strings in content/en.ts (start from docs/design/content/en.ts). Plain labels, playful headlines, no em dashes, metric units, 24-hour time.
+
+## Quality
+- Works from 360 px with no horizontal scroll. One breakpoint at 860 px.
+- prefers-reduced-motion turns off all motion. Visible focus rings. Every icon-only button has an aria-label.
+- Lighthouse 95+ on every page; landing page JavaScript under 150 KB gzipped.
+
+## Questions
+- If the docs don't settle something, leave TODO(question) and list it in your summary. Don't guess.

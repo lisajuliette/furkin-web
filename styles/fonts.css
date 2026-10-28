@@ -1,0 +1,4 @@
+:root {
+  --font-display: var(--nf-display), system-ui, sans-serif;
+  --font-body: var(--nf-body), system-ui, sans-serif;
+}
