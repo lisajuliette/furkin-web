@@ -5,9 +5,9 @@ import { legal, site } from '@/content/en';
 export const metadata: Metadata = {
   title: `${legal.privacyTitle} · ${site.name}`,
   description:
-    'Furkin is made by Pixel Witch, a sole proprietorship in The Hague, the Netherlands. Pixel Witch is responsible for the personal data described here.',
+    'What personal data Furkin collects, why, who else handles it, and the rights you have under the GDPR.',
 };
 
 export default function PrivacyPage() {
-  return <LegalDocument file="privacy" title={legal.privacyTitle} />;
+  return <LegalDocument file="privacy" title={legal.privacyTitle} draft={false} />;
 }
