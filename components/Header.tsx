@@ -13,10 +13,7 @@ export function Header() {
         <nav className="ws-nav" aria-label="Main">
           <Link href="/#how">{nav.how}</Link>
           <Link href="/#features">{nav.features}</Link>
-          {/* Support arrives in a later milestone. Prefetching it 404s. */}
-          <Link href="/support" prefetch={false}>
-            {nav.support}
-          </Link>
+          <Link href="/support">{nav.support}</Link>
         </nav>
         <Link className="fk-btn fk-btn--primary" href="/#get">
           {live ? nav.ctaLive : nav.ctaWaitlist}

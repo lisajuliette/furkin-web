@@ -16,16 +16,9 @@ export function Footer() {
         </div>
         <div className="ws-stack" style={{ gap: 16 }}>
           <nav className="ws-footer__links" aria-label="Footer">
-            {/* These routes arrive in later milestones. Prefetching them 404s. */}
-            <Link href="/privacy" prefetch={false}>
-              {site.footer.privacy}
-            </Link>
-            <Link href="/terms" prefetch={false}>
-              {site.footer.terms}
-            </Link>
-            <Link href="/support" prefetch={false}>
-              {site.footer.support}
-            </Link>
+            <Link href="/privacy">{site.footer.privacy}</Link>
+            <Link href="/terms">{site.footer.terms}</Link>
+            <Link href="/support">{site.footer.support}</Link>
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </nav>
           <p className="ws-small">

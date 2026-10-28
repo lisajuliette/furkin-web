@@ -25,7 +25,7 @@ export default function Home() {
             <span className="ws-blob ws-hero__blob2" aria-hidden="true" />
             <div className="ws-phone ws-hero__phone">
               <PhoneShot shot="PGlacierLightToday" alt={hero.phoneAlt} sizes="(max-width: 860px) 240px, 300px" priority className="ws-hero__shot ws-hero__shot--light" />
-              <PhoneShot shot="PGlacierDarkToday" alt={hero.phoneAlt} sizes="(max-width: 860px) 240px, 300px" priority className="ws-hero__shot ws-hero__shot--dark" />
+              <PhoneShot shot="PGlacierDarkToday" alt={hero.phoneAlt} sizes="(max-width: 860px) 240px, 300px" className="ws-hero__shot ws-hero__shot--dark" />
             </div>
             <span className="ws-sticker ws-sticker--done ws-hero__st1">
               <span className="ws-sticker__ic"><Icon name="check" size={18} /></span>

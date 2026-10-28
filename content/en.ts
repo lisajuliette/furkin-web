@@ -4,13 +4,14 @@
 export const site = {
   name: 'Furkin',
   domain: 'furkin.app',
-  email: 'hello@furkin.app',
+  email: 'lisa@pixelwitch.dev',
   title: 'Furkin: Track and Coordinate Pet Care',
   description: 'Furkin keeps everyone who cares for your pets on the same page: a shared daily list, reminders and who did what, for cats and dogs.',
   tagline: 'Track and coordinate pet care.',
+  ogLead: 'Track and coordinate pet care with everyone in your Household.',
   footer: {
     privacy: 'Privacy', terms: 'Terms', support: 'Support',
-    copyright: '© {year} Pixel Witch. All rights reserved. Made in The Hague, Netherlands.',
+    copyright: '© {year} Pixel Witch. All rights reserved. KvK 96974990. Made in The Hague, Netherlands.',
     themeLight: 'Light', themeDark: 'Dark', themeGroup: 'Theme',
   },
 };
@@ -119,7 +120,7 @@ export const auth = {
 
 export const support = {
   label: 'Support', title: 'How can we help?',
-  lead: 'Answers to the common questions. Anything else, email hello@furkin.app and a real person replies within two working days.',
+  lead: 'Answers to the common questions. Anything else, email lisa@pixelwitch.dev and a real person replies within two working days.',
   faq: [
     { q: 'Who is Furkin for?', a: "Anyone who shares the care of a cat or dog: couples, families, housemates, and later the sitter or friend who steps in while you're away." },
     { q: 'Does everyone need the app?', a: 'Yes. Each person signs in with their own account so the log can show who did what. Invite them from the Household tab.' },
@@ -137,4 +138,11 @@ export const notFound = {
   button: 'Go to the home page',
 };
 
-export const legal = { label: 'Legal', updated: 'Last updated {date}', onThisPage: 'On this page' };
+export const legal = {
+  label: 'Legal',
+  updated: 'Last updated {date}',
+  onThisPage: 'On this page',
+  draft: 'Draft for layout. The final text comes from {file} after a legal review.',
+  privacyTitle: 'Privacy policy',
+  termsTitle: 'Terms',
+};
