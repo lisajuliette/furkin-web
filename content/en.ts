@@ -100,6 +100,8 @@ export const invite = {
   body: "Join {inviter}'s Household on Furkin to see their daily routine and who did what.",
   step1: 'Get the app', step2: 'Open the invite in Furkin', open: 'Open in Furkin',
   step3: 'Or enter this code in the app', copy: 'Copy', copied: 'Copied', codeNote: 'The code works for 7 days and once.',
+  badgeApp: '[Official App Store badge]',
+  badgePlay: '[Official Google Play badge]',
   goneTitle: "This invite can't be used any more",
   goneBody: 'Invites last 7 days and work once. Ask the person who invited you to send a new one from the Household tab in Furkin.',
   back: 'Back to Furkin',

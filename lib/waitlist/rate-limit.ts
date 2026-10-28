@@ -16,9 +16,27 @@ export function rateLimit(ip: string): 'ok' | 'limited' {
   return 'ok';
 }
 
-export function clientIp(request: Request) {
+export function clientIp(request: { headers: { get(name: string): string | null } }) {
   const forwarded = request.headers.get('x-forwarded-for');
   const first = forwarded?.split(',')[0]?.trim();
   if (first) return first;
   return request.headers.get('x-real-ip')?.trim() || 'unknown';
+}
+
+const inviteWindowMs = 60 * 1000;
+const inviteLimit = 30;
+const inviteHits = new Map<string, number[]>();
+
+// Same open question as the waitlist counter: the docs do not name a shared store.
+// Invite pages are limited to 30 loads per IP per minute, in this server process.
+export function inviteRateLimit(ip: string): 'ok' | 'limited' {
+  const now = Date.now();
+  const recent = (inviteHits.get(ip) ?? []).filter((at) => now - at < inviteWindowMs);
+  if (recent.length >= inviteLimit) {
+    inviteHits.set(ip, recent);
+    return 'limited';
+  }
+  recent.push(now);
+  inviteHits.set(ip, recent);
+  return 'ok';
 }

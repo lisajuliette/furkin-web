@@ -9,6 +9,7 @@
 .ws-label{margin:0;font:800 13px/16px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--action)}
 .ws-h1{margin:0;font-family:var(--font-display);font-weight:800;font-size:76px;line-height:1;letter-spacing:-.02em}
 .ws-h2{margin:0;font-family:var(--font-display);font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-.015em}
+.ws-h2--panel{font-size:34px}
 .ws-h3{margin:0;font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1.2}
 .ws-lead{margin:0;font-size:21px;line-height:1.5;font-weight:600;color:var(--muted);max-width:34em}
 .ws-p{margin:0;font-size:17px;line-height:1.55;color:var(--muted)}
@@ -145,12 +146,16 @@ html[data-theme="dark"] .ws-phone img.ws-hero__shot--dark{display:block}
 /* Simple pages: invite, auth, confirm, 404 */
 .ws-simple{min-height:100%;display:flex;flex-direction:column}
 .ws-simple__main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px 72px}
-.ws-panel{width:100%;max-width:560px;border-radius:28px;border:2.5px solid var(--ink);background:var(--surface);box-shadow:6px 6px 0 0 var(--shadow);padding:40px;display:flex;flex-direction:column;gap:22px}
-.ws-code{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 12px 12px 22px;border-radius:20px;border:2.5px dashed var(--ink);background:var(--background)}
+.ws-panel{width:100%;max-width:560px;min-width:0;border-radius:28px;border:2.5px solid var(--ink);background:var(--surface);box-shadow:6px 6px 0 0 var(--shadow);padding:40px;display:flex;flex-direction:column;gap:22px}
+.ws-panel>.fk-btn{align-self:flex-start}
+.ws-panel .ws-stack,.ws-num{min-width:0}
+.ws-code{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;flex-wrap:wrap;padding:12px 12px 12px 22px;border-radius:20px;border:2.5px dashed var(--ink);background:var(--background)}
 .ws-code__v{font:800 36px/1 var(--font-display);letter-spacing:.18em}
 .ws-num{display:flex;gap:14px;align-items:flex-start}
 .ws-num__n{width:32px;height:32px;flex-shrink:0;border-radius:999px;border:2.5px solid var(--ink);background:var(--primary);color:var(--on-fill);display:flex;align-items:center;justify-content:center;font:800 15px/1 var(--font-display)}
 .ws-petchips{display:flex;gap:10px;flex-wrap:wrap}
+.ws-petchips .fk-chip{pointer-events:none;cursor:default}
+.ws-num .fk-btn{align-self:flex-start}
 
 /* Legal and support */
 .ws-legal{display:grid;grid-template-columns:240px minmax(0,1fr);gap:64px;padding:56px 0 0}
